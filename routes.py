@@ -25,17 +25,7 @@ class TaskRoutes:
         return jsonify({"message": "Task added!"})
 
     # Complete task route, marks a task as done
-    @staticmethod
-    def complete_task(task_id):
-        task = Task.query.get_or_404(task_id)
-        task.done = True
-        db.session.commit()
-        return jsonify({"message": "Task marked as done!"})
+    
 
     # Delete task route, deletes a task from the database
-    @staticmethod
-    def delete_task(task_id):
-        task = Task.query.get_or_404(task_id)
-        db.session.delete(task)
-        db.session.commit()
-        return jsonify({"message": f"Deleted: {task.task}!"})
+    
